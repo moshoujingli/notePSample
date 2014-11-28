@@ -1,0 +1,46 @@
+/*320 x 568 on iphone >=5*/
+/*320 x 480 on iphone <5*/
+@point: 3.375px;
+body{
+    width:  320*@point;
+    height: 568*@point;
+    background-image: url("bg.jpg");
+    background-size:  100% 100%;
+    background-repeat:no-repeat;
+    padding:0px;
+}
+#task_list_container{
+    margin-right: 10*@point;
+    margin-left: 10*@point;
+}
+#task_list{
+    font-size: 20*@point;
+    padding:0;
+}
+.list_header,
+.list_header h3,
+.item{
+    height:44*@point;
+    color:rgba(255, 255, 255, 1);
+    font-family: "HelveticaNeue-Light","HelveticaNeue-light","HelveticaNeue","Arial";
+    vertical-align: middle;
+    font-weight: 100;
+    list-style-type: none;
+    padding: 0;
+    margin:0px;
+    line-height: 44*@point;
+}
+.list_header h3,
+{
+    float:left;
+    width:(320-44)*@point;
+}
+.count{
+   height:44*@point;
+   width:44*@point;
+}
+.task_title{
+    color:rgba(255, 255, 255, 0.62);
+    height:44*@point;
+    line-height: 44*@point;
+}
