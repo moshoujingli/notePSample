@@ -1,6 +1,24 @@
 /*320 x 568 on iphone >=5*/
 /*320 x 480 on iphone <5*/
 @point: 3.375px;
+@halfWhite: rgba(255, 255, 255, 0.62);
+@UltraLight:"HelveticaNeue-UltraLight","HelveticaNeue-Light","HelveticaNeue-light","HelveticaNeue","Arial";
+@font-face { 
+  font-family: HelveticaNeue-UltraLight; 
+  src: url('helvetica-neue-ultra-light.ttf');
+}
+.center-vertical {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.rounded-corners (@radius: 50%) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
 body{
     width:  320*@point;
     height: 568*@point;
@@ -9,6 +27,15 @@ body{
     background-repeat:no-repeat;
     padding:0px;
 }
+#time_area{
+    font-size: 30*@point;
+    color:@halfWhite;
+    font-family: @UltraLight;
+    list-style-type: none;
+    li:first-child{
+        font-size: 80*@point;
+    }
+}
 #task_list_container{
     margin-right: 10*@point;
     margin-left: 10*@point;
@@ -16,13 +43,14 @@ body{
 #task_list{
     font-size: 20*@point;
     padding:0;
+    margin:0;
 }
 .list_header,
 .list_header h3,
 .item{
     height:44*@point;
     color:rgba(255, 255, 255, 1);
-    font-family: "HelveticaNeue-Light","HelveticaNeue-light","HelveticaNeue","Arial";
+    font-family: @UltraLight;
     vertical-align: middle;
     font-weight: 100;
     list-style-type: none;
@@ -30,7 +58,7 @@ body{
     margin:0px;
     line-height: 44*@point;
 }
-.list_header h3,
+.list_header h3
 {
     float:left;
     width:(320-20-44)*@point;
@@ -41,8 +69,28 @@ body{
     text-align: center;
     display:inline-block;
 }
+.count_bg{
+    height:26*@point;
+    width:26*@point;
+    line-height: 26*@point;
+    margin:auto auto;
+    .rounded-corners;
+    .center-vertical;
+    border-style: solid;
+    border-width: 1*@point;
+    border-color: white;
+}
+#quick_btn{
+    height:44*@point;
+    width:44*@point;
+    .rounded-corners;
+    border-style: solid;
+    border-width: 1*@point;
+    border-color: white;
+    margin:0;
+}
 .task_title{
-    color:rgba(255, 255, 255, 0.62);
+    color:@halfWhite;
     height:44*@point;
     line-height: 44*@point;
 }
